@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width"/>
+
+    <link rel="icon" href="favicon.ico" />
+
+    <title>Tryhardship</title>
+
+    <script type="text/javascript" src="js/phaser-3/phaser.min.js"></script>
+    <script>
+        function importCss(css) {
+          document.write(`<link rel="stylesheet" type="text/css" href="${ css }?dev=' + Math.floor(Math.random() * 10000) + '"/>`);
+        }
+        function importJs(script) {
+          document.write(`<script src="${ script }?dev=` + Math.floor(Math.random() * 10000) + `"\><\/script>`);
+        }
+
+        importCss("css/fonts.css");
+        importCss("css/nes.css");
+        importCss("css/main.css");
+
+        importJs("js/util.js");
+        importJs("js/modes.js");
+        importJs("js/audio.js");
+        importJs("js/timer.js");
+        importJs("js/scores.js");
+        importJs("js/scene-1/Scene1.js");
+        importJs("js/scene-2/player.js");
+        importJs("js/scene-2/move.js");
+        importJs("js/scene-2/enemies/bulle.js");
+        importJs("js/scene-2/enemies/daftPunk.js");
+        importJs("js/scene-2/enemies/daft.js");
+        importJs("js/scene-2/enemies/punk.js");
+        importJs("js/scene-2/enemies/laser.js");
+        importJs("js/scene-2/enemies/lightning.js");
+        importJs("js/scene-2/enemies/eggman.js");
+        importJs("js/scene-2/enemies.js");
+        importJs("js/scene-2/sequence.js");
+        importJs("js/scene-2/spotlight.js");
+        importJs("js/scene-2/oneMoreTime.js");
+        importJs("js/scene-2/successScreen.js");
+        importJs("js/scene-2/Scene2.js");
+
+        importJs("js/main.js");
+    </script>
+</head>
+
+<body>
+<section id="content">
+    <div id="life" class="nes-container is-dark">
+        <div id="life_gauge"></div>
+        <div id="life_points">Life : <span id="life_value">100</span></div>
+    </div>
+    <div id="timer">00:00.000</div>
+    <div id="idGameDiv" class="nes-container is-rounded is-dark"></div>
+
+    <div id="resources">
+        <audio id="get-lucky" controls preload="auto" >
+            <source src="/resources/tryhardship/get-lucky.mp3" type="audio/mpeg">
+            Your browser does not support the audio tag.
+        </audio>
+        <audio id="harder" controls preload="auto" >
+            <source src="/resources/tryhardship/harder.mp3" type="audio/mpeg">
+            Your browser does not support the audio tag.
+        </audio>
+        <audio id="explosion" controls preload="auto" >
+            <source src="/resources/tryhardship/explosion.mp3" type="audio/mpeg">
+            Your browser does not support the audio tag.
+        </audio>
+        <audio id="one-more-time" loop controls preload="auto" >
+            <source src="/resources/tryhardship/one-more-time.mp3" type="audio/mpeg">
+            Your browser does not support the audio tag.
+        </audio>
+        <audio id="hit" controls preload="auto" >
+            <source src="/resources/tryhardship/hit.mp3" type="audio/mpeg">
+            Your browser does not support the audio tag.
+        </audio>
+        <audio id="around-the-world" controls preload="auto" >
+            <source src="/resources/tryhardship/around-the-world.mp3" type="audio/mpeg">
+            Your browser does not support the audio tag.
+        </audio>
+    </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+* {
+    /* Removes Mobile Highlight */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+    background-color: #212529;
+}
+
+audio {
+    display: none;
+}
+
+.nes-container.is-rounded.is-dark {
+    border-image-outset: 2;
+}
+
+#content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1230px;
+    height: 830px;
+    margin-left: -615px;
+    margin-top: -415px;
+}
+
+#idGameDiv {
+    display: inline-block;
+    padding: 0;
+    background-color: black;
+}
+
+canvas {
+
+}
+progress {
+    color: red;
+}
+progress::-moz-progress-bar { background-color: blue; }
+progress::-webkit-progress-value { background-color: blue; }
+
+#life {
+    display: inline-block;
+    position: relative;
+    width: 500px;
+    height: 40px;
+    line-height: 34px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    color: white;
+    background-color: transparent;
+    margin-left: 10px;
+}
+
+#life_points,
+#life_gauge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+#life_gauge {
+    background-color: green;
+    z-index: 1;
+    width: 100%;
+}
+
+#life_points {
+    color: white;
+    z-index: 2;
+    width: 100%;
+}
+
+#timer {
+    position: absolute;
+    right: 15px;
+    background-color: black;
+    border: 4px solid white;
+    font-family: PressStart2P, serif;
+    top: 0;
+    padding: 4px 14px;
+    color: white;
+}

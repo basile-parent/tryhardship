@@ -1,0 +1,7 @@
+.idea
+*.iml
+
+assets/unused_assets
+**.mp3
+**.psd
+resources
