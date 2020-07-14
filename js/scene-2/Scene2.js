@@ -53,11 +53,6 @@ class Scene2 extends Phaser.Scene {
     this.load.spritesheet('spaceship', 'assets/spaceship.png', { frameWidth: 41, frameHeight: 19 });
     this.load.spritesheet('laser', 'assets/laser.png', { frameWidth: 37, frameHeight: 28 });
     this.load.spritesheet('laser_beam', 'assets/laser_beam.png', { frameWidth: 1200, frameHeight: 234 });
-
-    this.load.audio('harder', 'assets/harder.mp3')
-    this.load.audio('explosion', 'assets/explosion.mp3')
-    this.load.audio('one-more-time', 'assets/one-more-time.mp3')
-    this.load.audio('hit', 'assets/hit.mp3')
   }
 
   create() {

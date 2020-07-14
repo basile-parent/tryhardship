@@ -8,8 +8,6 @@ class Scene1 extends Phaser.Scene {
     this.load.image('start_button', 'assets/start_button.png');
     this.load.image('background', 'assets/stars.png');
     this.load.image('backgroundFront', 'assets/stars_front.png');
-
-    this.load.audio('audio', 'assets/get-lucky.mp3')
   }
   create() {
     // Bug avec le support manette : lorsqu'on revient sur l'écran d'accueil, ça appuie sur A automatiquement
