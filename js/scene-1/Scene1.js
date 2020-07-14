@@ -96,7 +96,6 @@ class Scene1 extends Phaser.Scene {
     }
 
     if ((Phaser.Input.Keyboard.JustDown(this.cursors.x) || this.pad?.A) && !this.locked) {
-      console.log("Starting", Phaser.Input.Keyboard.JustDown(this.cursors.x), this.pad?.A);
       this.start();
     }
   }

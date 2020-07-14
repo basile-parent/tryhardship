@@ -30,13 +30,11 @@ class OneMoreTime {
   }
 
   restart() {
-    console.log("restart");
     Object.values(this.scene.audio.items).forEach(a => a.stop());
     this.scene.scene.restart();
   }
 
   home() {
-    console.log("home");
     Object.values(this.scene.audio.items).forEach(a => a.stop());
     this.scene.scene.stop("playGame");
     this.scene.scene.start("home");
