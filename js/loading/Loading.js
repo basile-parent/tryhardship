@@ -51,9 +51,14 @@ class Loading extends Phaser.Scene {
     const allAudios = document.getElementsByTagName("audio");
     for (let i = 0; i < allAudios.length; i++) {
       const audio = allAudios[i];
-      audio.onloadeddata = () => {
+      if (audio.readyState === 4) {
         this.loadingPercent += LOADING_VALUES.AUDIO;
         this._updateProgress();
+      } else {
+        audio.onloadeddata = () => {
+          this.loadingPercent += LOADING_VALUES.AUDIO;
+          this._updateProgress();
+        }
       }
     }
   }
@@ -62,13 +67,10 @@ class Loading extends Phaser.Scene {
       this.loadingPercent += LOADING_VALUES.FONT;
       this._updateProgress();
     });
-
-    // document.fonts.onloadingdone = function (fontFaceSetEvent) {
-    //   console.log(fontFaceSetEvent);
-    // };
   }
 
   _updateProgress() {
+    console.log("update progress", this.loadingPercent, !!this.progress);
     this.progress?.setSize(this.progressBarWidth * (this.loadingPercent / 100), this.progressBarHeight);
 
     if (this.loadingPercent > 99.9) {

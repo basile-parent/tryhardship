@@ -51,7 +51,6 @@ progress::-webkit-progress-value { background-color: blue; }
     text-align: center;
     color: white;
     background-color: transparent;
-    margin-left: 10px;
 }
 
 #life_points,
@@ -83,4 +82,17 @@ progress::-webkit-progress-value { background-color: blue; }
     top: 0;
     padding: 4px 14px;
     color: white;
+}
+
+#version {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    font-size : 16px;
+    color: gray;
+    z-index: -1;
+    letter-spacing: -1px;
+}
+#version_number {
+    letter-spacing: -5px;
 }

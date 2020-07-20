@@ -36,3 +36,4 @@ function changeMode(mode) {
 let game = new Phaser.Game(config);
 
 let SEQUENCES = {};
+document.getElementById("version_number").innerHTML = VERSION;
