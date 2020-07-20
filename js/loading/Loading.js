@@ -42,6 +42,7 @@ class Loading extends Phaser.Scene {
         .then(seq => {
           SEQUENCES[mode.key] = seq;
           this.loadingPercent += LOADING_VALUES.SEQUENCE;
+          console.log("Sequence loaded : " + mode.key, this.loadingPercent);
           this._updateProgress();
         });
     });
@@ -57,6 +58,7 @@ class Loading extends Phaser.Scene {
       } else {
         audio.onloadeddata = () => {
           this.loadingPercent += LOADING_VALUES.AUDIO;
+          console.log("Audio loaded : " + audio, this.loadingPercent);
           this._updateProgress();
         }
       }
@@ -65,12 +67,12 @@ class Loading extends Phaser.Scene {
   _watchFonts() {
     document.fonts.ready.then(() => {
       this.loadingPercent += LOADING_VALUES.FONT;
+      console.log("Fonts loaded", this.loadingPercent);
       this._updateProgress();
     });
   }
 
   _updateProgress() {
-    console.log("update progress", this.loadingPercent, !!this.progress);
     this.progress?.setSize(this.progressBarWidth * (this.loadingPercent / 100), this.progressBarHeight);
 
     if (this.loadingPercent > 99.9) {

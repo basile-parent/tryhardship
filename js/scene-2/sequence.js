@@ -5,7 +5,7 @@ class Sequence {
     this.scene = scene;
     this.config = config;
     this.active = false;
-    this.startTimer = 0;
+    this.startTimer = 180000;
     this.timers = [];
 
     this.onStart = onStart;
@@ -139,14 +139,15 @@ class Sequence {
 // const yArray = [75, 150, 225, 300, 375, 450, 525, 600, 675, 725];
 // let lastIndexes = [];
 // let newIndex = -1;
-// for (let i = 0; i < 53; i++) {
+// for (let i = 0; i < 35; i++) {
 //   while (lastIndexes.includes(newIndex) || newIndex === -1) {
 //     newIndex = Math.round(Math.random() * (yArray.length - 0.5));
 //   }
-//   pattern16.push({ timerDelta: 100, type: "bulle", options: { y: yArray[newIndex] }});
+//   pattern16.push({ timerDelta: 150, type: "bulle", options: { y: yArray[newIndex] }});
 //   lastIndexes.push(newIndex);
 //   if (lastIndexes.length === (yArray.length - 1)) {
 //     lastIndexes = [];
 //   }
 // }
+// console.log(pattern16.map(p => `{ "timerDelta": ${ p.timerDelta }, "type": "${ p.type }", "options": { "y": ${ p.options.y } }}`).join(",\n"));
 

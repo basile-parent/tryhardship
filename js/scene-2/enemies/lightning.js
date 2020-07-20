@@ -1,5 +1,8 @@
 class LightningManager {
   boltConfigs = {
+    "xs" : {
+      scale: 0.35
+    },
     "small" : {
       scale: 0.5
     },
@@ -9,7 +12,7 @@ class LightningManager {
     "big" : {
       scale: 1
     }
-  }
+  };
 
   constructor(game, config) {
     this.game = game;
