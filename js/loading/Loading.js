@@ -38,7 +38,7 @@ class Loading extends Phaser.Scene {
       fetch(`/assets/sequence/${mode.key}.json?dev=${ Math.round(Math.random() * 1000000000)}`)
         .then(r => r.json())
         .then(seq => {
-          SEQUENCE = seq;
+          SEQUENCES[mode.key] = seq;
           this.loadingPercent += LOADING_VALUES.SEQUENCE;
           this._updateProgress();
         });

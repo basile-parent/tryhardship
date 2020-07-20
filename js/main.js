@@ -35,4 +35,4 @@ function changeMode(mode) {
 
 let game = new Phaser.Game(config);
 
-let SEQUENCE = null;;
+let SEQUENCES = {};
