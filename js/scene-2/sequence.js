@@ -14,20 +14,16 @@ class Sequence {
   }
 
   start() {
-    fetch(`/assets/sequence/${this.config.mode.key}.json?dev=${ Math.round(Math.random() * 1000000000)}`)
-      .then(r => r.json())
-      .then(sequence => {
-        this.active = true;
+    this.active = true;
 
-        this._schedulePattern(sequence, 0);
-        this._playAudio({ timer: this.startTimer});
+    this._schedulePattern(SEQUENCES[this.config.mode.key], 0);
+    this._playAudio({ timer: this.startTimer});
 
-        if (this.startTimer > 2000) {
-          this.scene.enemies.showEnemies([ "daft", "punk", "laser"]);
-        }
+    if (this.startTimer > 2000) {
+      this.scene.enemies.showEnemies([ "daft", "punk", "laser"]);
+    }
 
-        this.onStart && this.onStart(this.startTimer);
-      })
+    this.onStart && this.onStart(this.startTimer);
   }
 
   stop() {
