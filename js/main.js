@@ -13,7 +13,7 @@ const config = {
       // debug: true
     }
   },
-  scene: [Scene1, Scene2],
+  scene: [Loading, Scene1, Scene2],
   mode: MODES[1],
   damages: damage.normal
 };
@@ -34,3 +34,5 @@ function changeMode(mode) {
 
 
 let game = new Phaser.Game(config);
+
+let SEQUENCE = null;;
