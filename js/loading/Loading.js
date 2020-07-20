@@ -1,13 +1,14 @@
 const LOADING_VALUES = {
   SEQUENCE: 30 / MODES.length,
-  AUDIO: 0 // Defined in Loading scene constructor
+  AUDIO: 0, // Defined in Loading scene constructor
+  FONT: 5 // Defined in Loading scene constructor
 };
 
 class Loading extends Phaser.Scene {
   constructor() {
     super("loading");
 
-    LOADING_VALUES.AUDIO = 70 / document.getElementsByTagName("audio").length;
+    LOADING_VALUES.AUDIO = 65 / document.getElementsByTagName("audio").length;
 
     this.loadingPercent = 0;
     this.progressBarHeight = 50;
@@ -31,6 +32,7 @@ class Loading extends Phaser.Scene {
 
     this._fecthSequence();
     this._watchAudioTags();
+    this._watchFonts();
   }
 
   _fecthSequence() {
@@ -54,6 +56,16 @@ class Loading extends Phaser.Scene {
         this._updateProgress();
       }
     }
+  }
+  _watchFonts() {
+    document.fonts.ready.then(() => {
+      this.loadingPercent += LOADING_VALUES.FONT;
+      this._updateProgress();
+    });
+
+    // document.fonts.onloadingdone = function (fontFaceSetEvent) {
+    //   console.log(fontFaceSetEvent);
+    // };
   }
 
   _updateProgress() {
