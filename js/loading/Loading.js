@@ -37,7 +37,7 @@ class Loading extends Phaser.Scene {
 
   _fecthSequence() {
     MODES.forEach(mode => {
-      fetch(`/assets/sequence/${mode.key}.json?dev=${ Math.round(Math.random() * 1000000000)}`)
+      fetch(`/assets/sequence/${mode.key}.json?version=${ Math.round(Math.random() * 1000000000)}`)
         .then(r => r.json())
         .then(seq => {
           SEQUENCES[mode.key] = seq;

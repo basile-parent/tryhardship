@@ -55,10 +55,10 @@
 
 <script>
   function importCss(css) {
-    document.write(`<link rel="stylesheet" type="text/css" href="${ css }?dev=${ getVersion() }"/>`);
+    document.write(`<link rel="stylesheet" type="text/css" href="${ css }?version=${ getVersion() }"/>`);
   }
   function importJs(script) {
-    document.write(`<script src="${ script }?dev=${ getVersion() }"\><\/script>`);
+    document.write(`<script src="${ script }?version=${ getVersion() }"\><\/script>`);
   }
 
   importCss("css/fonts.css");
