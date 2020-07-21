@@ -8,6 +8,11 @@ class Scene1 extends Phaser.Scene {
     this.load.image('start_button', 'assets/start_button.png');
     this.load.image('background', 'assets/stars.png');
     this.load.image('backgroundFront', 'assets/stars_front.png');
+    this.load.image('medalNone', 'assets/medal-none.png?Ezcef');
+    this.load.image('medalBronze', 'assets/medal-bronze.png?gzeze');
+    this.load.image('medalSilver', 'assets/medal-silver.png?ezcze');
+    this.load.image('medalGold', 'assets/medal-gold.png?gzevz');
+    this.load.image('medalPlatinium', 'assets/medal-platinum.png');
   }
   create() {
     this.debugDiv = document.getElementById("debug");
@@ -129,19 +134,44 @@ class Scene1 extends Phaser.Scene {
       modeText.setFontSize(14);
       modeText.setFontFamily("PressStart2P");
       modeText.setInteractive();
-      modeText.on('pointerdown', () => this._changeDifficulty(modeText))
+      modeText.on('pointerdown', () => this._changeDifficulty(modeText));
       modeText.on('pointerover',function() {
         modeText.setColor("yellow");
-      })
+      });
       modeText.on('pointerout',function() {
         modeText.setColor("white");
       });
 
       const scoreMode = SCORES[mode.key];
-      const scoreModeText = this.add.text(500, 300 + index * 40, formatTime(scoreMode));
+      const scoreModeText = this.add.text(500, 300 + index * 40, formatTime(scoreMode.timer));
       scoreModeText.setFontSize(14);
       scoreModeText.setFontFamily("PressStart2P");
-      !scoreMode && scoreModeText.setColor("gray");
+      !scoreMode.timer && scoreModeText.setColor("gray");
+
+      let medal;
+      if (scoreMode.medals.includes("bronze")) {
+        medal = this.add.sprite(650, 305 + index * 40, 'medalBronze');
+      } else {
+        medal = this.add.sprite(650, 305 + index * 40, 'medalNone');
+      }
+      medal.setDisplaySize(18, 18);
+      if (scoreMode.medals.includes("silver")) {
+        medal = this.add.sprite(675, 305 + index * 40, 'medalSilver');
+      } else {
+        medal = this.add.sprite(675, 305 + index * 40, 'medalNone');
+      }
+      medal.setDisplaySize(18, 18);
+      if (scoreMode.medals.includes("gold")) {
+        medal = this.add.sprite(700, 305 + index * 40, 'medalGold');
+      } else {
+        medal = this.add.sprite(700, 305 + index * 40, 'medalNone');
+      }
+      medal.setDisplaySize(18, 18);
+      if (scoreMode.medals.includes("platinium")) {
+        medal = this.add.sprite(725, 305 + index * 40, 'medalPlatinium');
+        medal.setDisplaySize(18, 18);
+      }
+
 
       return modeText;
     });
@@ -211,6 +241,7 @@ class Scene1 extends Phaser.Scene {
       modeText.setText(` ${ modeText.selected ? ">" : " " } ${modeText.label}`);
     })
   }
+
   _changeDifficultyArrow(direction) {
     const selectedIndex = this.modes.findIndex(m => m.selected);
     const newIndex = selectedIndex + direction;

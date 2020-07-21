@@ -26,10 +26,7 @@ function changeMode(mode) {
 /*
 // TODO :
 - Checkpoints
-- Timers / score par difficulté
-- Séquences différentes pour les difficultés
 - Récupération de vie
-- Retirer l'aléatoire
 */
 
 

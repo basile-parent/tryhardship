@@ -155,9 +155,9 @@ class Scene2 extends Phaser.Scene {
   };
 
   sequenceStopped = timer => {
-    if (SCORES[config.mode.key] < timer) {
+    if (SCORES[config.mode.key].timer < timer) {
       this.endScreen.newHighScore(timer);
-      setScore(config.mode, timer);
+      setScore(config.mode, timer, this.player.lifePoints);
     }
   };
 
