@@ -13,13 +13,13 @@ const MODES = [{
 }];
 const damage = {
   easy: {
-    daft: 5,
-    punk: 5,
-    lighting: 7,
-    laser: 30,
-    eggmanJump: 7,
+    daft: 8,
+    punk: 8,
+    lighting: 10,
+    laser: 25,
+    eggmanJump: 10,
     eggmanExplode: 15,
-    bulle: 7
+    bulle: 10
   },
   normal: {
     daft: 10,
@@ -31,13 +31,13 @@ const damage = {
     bulle: 15
   },
   hard: {
-    daft: 20,
-    punk: 20,
-    lighting: 30,
-    laser: 70,
-    eggmanJump: 30,
-    eggmanExplode: 40,
-    bulle: 25
+    daft: 15,
+    punk: 15,
+    lighting: 20,
+    laser: 60,
+    eggmanJump: 20,
+    eggmanExplode: 30,
+    bulle: 20
   },
   tryhard: {
     daft: 100,

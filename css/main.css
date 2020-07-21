@@ -96,3 +96,13 @@ progress::-webkit-progress-value { background-color: blue; }
 #version_number {
     letter-spacing: -5px;
 }
+
+#debug {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size : 12px;
+    color: white;
+    z-index: -1;
+    letter-spacing: -1px;
+}

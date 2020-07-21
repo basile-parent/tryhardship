@@ -9,8 +9,14 @@ class LightningManager {
     "medium" : {
       scale: 0.75
     },
+    "large" : {
+      scale: 0.85
+    },
     "big" : {
       scale: 1
+    },
+    "bigger" : {
+      scale: 1.25
     }
   };
 
@@ -33,7 +39,7 @@ class LightningManager {
     const bolt = this.game.physics.add.sprite(defaultX, y, 'lightning');
     bolt.scale = scale;
     bolt.anims.load('lightning_anim');
-    bolt.setSize(65, 600, true);
+    bolt.setSize(50 , 570, true);
     bolt.visible = true;
     bolt.body.velocity.x = speed ? speed * - 1 : -400;
     bolt.anims.load('lightning_anim');

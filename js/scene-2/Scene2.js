@@ -17,6 +17,7 @@ class Scene2 extends Phaser.Scene {
 
     this.lifePointsDiv = document.getElementById("life_value");
     this.lifeGaugeDiv = document.getElementById("life_gauge");
+    this.debugDiv = document.getElementById("debug");
 
     this.timer = new Timer();
     this.timer.addMessageHandler("stopTimer", e => this.sequenceStopped(e));
@@ -126,12 +127,16 @@ class Scene2 extends Phaser.Scene {
     }
 
     movePlayer(this);
+
+    if (config.physics.arcade.debug) {
+      this.debugDiv.innerHTML = `FPS : ${ Math.round(this.game.loop.actualFps) }`;
+    }
   }
 
   _onStart = (timer) => {
     this.timer.setTime(timer);
     this.timer.start();
-  }
+  };
 
   hitting = damage => (player, enemy) => {
     const hasTakenDamage = this.player.takeDamage(damage || 0);
@@ -147,14 +152,14 @@ class Scene2 extends Phaser.Scene {
     } else if (hasTakenDamage) {
       this.audio.hit.play();
     }
-  }
+  };
 
   sequenceStopped = timer => {
     if (SCORES[config.mode.key] < timer) {
       this.endScreen.newHighScore(timer);
       setScore(config.mode, timer);
     }
-  }
+  };
 
   onWin = timer => {
     this.endScreen = this.successScreen;
@@ -164,6 +169,6 @@ class Scene2 extends Phaser.Scene {
     this.sequenceStopped(timer * 1000);
 
     this.textScreenTimeout = setTimeout(() => this.successScreen.show(), 1500);
-  }
+  };
 
 }

@@ -511,10 +511,10 @@
 
 
   { "timer":  0, "type": "COMMENT", "value": "Electro solo"},
-  { "timer": 198800, "type": "bulle", "options": { "y": 75 }},
-  { "timerDelta": 0, "type": "bulle", "options": { "y": 150 }},
-  { "timerDelta": 0, "type": "bulle", "options": { "y": 225 }},
-  { "timerDelta": 0, "type": "bulle", "options": { "y": 300 }},
+  { "timer": 198800, "type": "bulle", "options": { "y": 50 }},
+  { "timerDelta": 0, "type": "bulle", "options": { "y": 250 }},
+  { "timerDelta": 0, "type": "bulle", "options": { "y": 450 }},
+  { "timerDelta": 0, "type": "bulle", "options": { "y": 650 }},
 
   { "timerDelta": 150, "type": "bulle", "options": { "y": 75 }},
   { "timerDelta": 150, "type": "bulle", "options": { "y": 375 }},

@@ -52,18 +52,19 @@ class Loading extends Phaser.Scene {
     const allAudios = document.getElementsByTagName("audio");
     for (let i = 0; i < allAudios.length; i++) {
       const audio = allAudios[i];
-      if (audio.readyState === 4) {
-        this.loadingPercent += LOADING_VALUES.AUDIO;
-        this._updateProgress();
-      } else {
-        audio.onloadeddata = () => {
-          this.loadingPercent += LOADING_VALUES.AUDIO;
-          console.log("Audio loaded : " + audio, this.loadingPercent);
-          this._updateProgress();
-        }
-      }
+      this._watchAudioTag(audio);
     }
   }
+  _watchAudioTag(tag) {
+    if (tag.readyState === 4) {
+      this.loadingPercent += LOADING_VALUES.AUDIO;
+      console.log("Audio loaded : " + tag.id, this.loadingPercent);
+      this._updateProgress();
+    } else {
+      setTimeout(() => this._watchAudioTag(tag), 500);
+    }
+  }
+
   _watchFonts() {
     document.fonts.ready.then(() => {
       this.loadingPercent += LOADING_VALUES.FONT;

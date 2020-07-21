@@ -10,6 +10,8 @@ class Scene1 extends Phaser.Scene {
     this.load.image('backgroundFront', 'assets/stars_front.png');
   }
   create() {
+    this.debugDiv = document.getElementById("debug");
+
     // Bug avec le support manette : lorsqu'on revient sur l'écran d'accueil, ça appuie sur A automatiquement
     this.locked = true;
     setTimeout(() => this.locked = false, 100);
@@ -95,6 +97,10 @@ class Scene1 extends Phaser.Scene {
 
     if ((Phaser.Input.Keyboard.JustDown(this.cursors.x) || this.pad?.A) && !this.locked) {
       this.start();
+    }
+
+    if (config.physics.arcade.debug) {
+      this.debugDiv.innerHTML = `FPS : ${ Math.round(this.game.loop.actualFps) }`;
     }
   }
 

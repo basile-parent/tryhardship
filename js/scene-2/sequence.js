@@ -5,7 +5,7 @@ class Sequence {
     this.scene = scene;
     this.config = config;
     this.active = false;
-    this.startTimer = 0;
+    this.startTimer = 197000;
     this.timers = [];
 
     this.onStart = onStart;
@@ -92,7 +92,12 @@ class Sequence {
             intervalJumpTime: options.intervalJumpTime
           }));
       } else if (type === "eggmanHoming") {
-
+        this._scheduleEvent(timer, () =>
+          this.scene.enemies.create(this.scene.enemies.TYPES.EGGMAN_HOMING, {
+            x: this.config.width, y: options.y,
+            velocity: options.velocity, explodeTimeout: options.explodeTimeout,
+            intervalJumpTime: options.intervalJumpTime
+          }));
       } else if (type === "showLasers") {
         this._scheduleEvent(timer, () => this.scene.enemies.showLasers());
       } else if (type === "collapseLasers") {
@@ -139,11 +144,11 @@ class Sequence {
 // const yArray = [75, 150, 225, 300, 375, 450, 525, 600, 675, 725];
 // let lastIndexes = [];
 // let newIndex = -1;
-// for (let i = 0; i < 35; i++) {
+// for (let i = 0; i < 70; i++) {
 //   while (lastIndexes.includes(newIndex) || newIndex === -1) {
 //     newIndex = Math.round(Math.random() * (yArray.length - 0.5));
 //   }
-//   pattern16.push({ timerDelta: 150, type: "bulle", options: { y: yArray[newIndex] }});
+//   pattern16.push({ timerDelta: 70, type: "bulle", options: { y: yArray[newIndex] }});
 //   lastIndexes.push(newIndex);
 //   if (lastIndexes.length === (yArray.length - 1)) {
 //     lastIndexes = [];
