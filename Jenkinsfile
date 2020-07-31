@@ -18,5 +18,13 @@ pipeline {
                 sh "cp -rf $WORKSPACE/* $JENKINS_HOME/export_react_builds/$FOLDER_NAME"
             }
         }
+        stage('Copy configuration') {
+            environment {
+                FOLDER_NAME="tryhardship"
+            }
+            steps {
+                sh "cp -f /opt/configuration/$FOLDER_NAME/* $JENKINS_HOME/export_react_builds/$FOLDER_NAME"
+            }
+        }
     }
 }

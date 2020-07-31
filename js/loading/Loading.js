@@ -30,14 +30,19 @@ class Loading extends Phaser.Scene {
     this.progress = this.add.rectangle(302, (config.height / 2) - (this.progressBarHeight / 2), 0, this.progressBarHeight, 0xffffff);
     this.progress.setOrigin(0, 0);
 
-    this._fecthSequence();
+    this._fetchSequence();
     this._watchAudioTags();
     this._watchFonts();
   }
 
-  _fecthSequence() {
+  _fetchSequence() {
     MODES.forEach(mode => {
-      fetch(`/assets/sequence/${mode.key}.json?version=${ Math.round(Math.random() * 1000000000)}`)
+      fetch(`/assets/sequence/${mode.key}.json?version=${ Math.round(Math.random() * 1000000000)}`, {
+        method: "GET",
+        headers: {
+          "X_API_key": X_API_KEY
+        }
+      })
         .then(r => r.json())
         .then(seq => {
           SEQUENCES[mode.key] = seq;
