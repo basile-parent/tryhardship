@@ -23,7 +23,7 @@ pipeline {
                 FOLDER_NAME="tryhardship"
             }
             steps {
-                sh "cp -f /opt/configuration/$FOLDER_NAME/* $JENKINS_HOME/export_react_builds/$FOLDER_NAME"
+                sh "cp -f /opt/configuration/$FOLDER_NAME/* $JENKINS_HOME/export_react_builds/$FOLDER_NAME/js"
             }
         }
     }
