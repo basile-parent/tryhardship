@@ -5,7 +5,7 @@ class Sequence {
     this.scene = scene;
     this.config = config;
     this.active = false;
-    this.startTimer = 223000;
+    this.startTimer = 0;
     this.timers = [];
 
     this.onStart = onStart;
