@@ -10,7 +10,7 @@ const config = {
   physics: {
     default: 'arcade',
     arcade: {
-      debug: true
+      debug: IS_DEV
     }
   },
   scene: [Loading, Scene1, Scene2],
