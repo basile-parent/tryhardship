@@ -15,7 +15,7 @@ pipeline {
             }
             steps {
                 sh "rm -rf $JENKINS_HOME/export_react_builds/$FOLDER_NAME/*"
-                sh "cp -f /opt/configuration/tryhardship/* ."
+                sh "cp -rf /opt/configuration/tryhardship/* ."
                 sh "cp -rf $WORKSPACE/* $JENKINS_HOME/export_react_builds/$FOLDER_NAME"
             }
         }
