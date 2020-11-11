@@ -16,7 +16,6 @@ pipeline {
             steps {
                 sh "mkdir -p $JENKINS_HOME/export_html_builds/$FOLDER_NAME"
                 sh "rm -rf $JENKINS_HOME/export_html_builds/$FOLDER_NAME/*"
-                sh "cp -rf /opt/configuration/tryhardship/* ."
                 sh "cp -rf $WORKSPACE/* $JENKINS_HOME/export_html_builds/$FOLDER_NAME"
             }
         }
@@ -25,7 +24,7 @@ pipeline {
                 FOLDER_NAME="tryhardship"
             }
             steps {
-                sh "cp -f /opt/configuration/$FOLDER_NAME/* $JENKINS_HOME/export_react_builds/$FOLDER_NAME/js"
+                sh "cp -rf /opt/configuration/$FOLDER_NAME/* $JENKINS_HOME/export_html_builds/$FOLDER_NAME"
             }
         }
     }
