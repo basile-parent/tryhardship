@@ -14,7 +14,7 @@ pipeline {
                 FOLDER_NAME="tryhardship"
             }
             steps {
-                sh "mkdir -p /var/jenkins_home/export_html_builds/gateway"
+                sh "mkdir -p $JENKINS_HOME/export_html_builds/$FOLDER_NAME"
                 sh "rm -rf $JENKINS_HOME/export_html_builds/$FOLDER_NAME/*"
                 sh "cp -rf /opt/configuration/tryhardship/* ."
                 sh "cp -rf $WORKSPACE/* $JENKINS_HOME/export_html_builds/$FOLDER_NAME"
