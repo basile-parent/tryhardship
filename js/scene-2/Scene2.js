@@ -90,11 +90,11 @@ class Scene2 extends Phaser.Scene {
     BulleAnimations(this).forEach(a => this.anims.create(a));
 
     this.audio = new AudioManager(this, {
-      harder: { id : "harder", volume: 0.75, seek: 0, loop: false },
-      hit: { id: "hit", volume: 1, seek: 0, loop: false },
-      explosion: { id : "explosion", volume: 1, seek: 0, loop: false },
-      oneMoreTime: { id : "one-more-time", volume: 1, seek: 0, loop: true },
-      aroundTheWorld: { id : "around-the-world", volume: 1, seek: 0, loop: true }
+      harder: { id : "harder", volume: CURRENT_AUDIO_VOLUME, seek: 0, loop: false },
+      hit: { id: "hit", volume: CURRENT_AUDIO_VOLUME, seek: 0, loop: false },
+      explosion: { id : "explosion", volume: CURRENT_AUDIO_VOLUME, seek: 0, loop: false },
+      oneMoreTime: { id : "one-more-time", volume: CURRENT_AUDIO_VOLUME, seek: 0, loop: true },
+      aroundTheWorld: { id : "around-the-world", volume: CURRENT_AUDIO_VOLUME, seek: 0, loop: true }
     });
 
     this.enemies = new EnemiesManager(this, config);

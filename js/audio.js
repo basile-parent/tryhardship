@@ -10,6 +10,10 @@ class AudioManager {
     return Object.entries(this).filter(([key]) => key !== "scene").map(([key, value]) => value);
   }
 
+  setVolume(volume) {
+    Object.values(this.items).forEach(htmlAudio => htmlAudio.volume = volume);
+  }
+
 }
 
 class HTMLAudio {

@@ -1,4 +1,4 @@
-const VERSION = "1.0.1";
+const VERSION = "1.0.2";
 
 function getVersion() {
   if (document.location.href.startsWith("http://localhost")) {

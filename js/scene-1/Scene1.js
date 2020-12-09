@@ -22,7 +22,7 @@ class Scene1 extends Phaser.Scene {
     setTimeout(() => this.locked = false, 100);
 
     this.audio = new AudioManager(this, {
-      getLucky: { id: "get-lucky", volume: 1, seek: 0, loop: true, autoplay: true }
+      getLucky: { id: "get-lucky", volume: CURRENT_AUDIO_VOLUME, seek: 0, loop: true, autoplay: true }
     });
 
     this.background = this.add.tileSprite(0,0, config.width, config.height, "background");

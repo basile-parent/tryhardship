@@ -17,6 +17,10 @@
         }
     </style>
 
+    <script>
+        let CURRENT_AUDIO_VOLUME = 0.7;
+    </script>
+
     <script type="text/javascript" src="js/constants.js"></script>
     <script type="text/javascript" src="http://app.basileparent.fr/resources/libs/@basile-parent/auth.0.0.2.js"></script>
     <script type="text/javascript" src="js/phaser-3/phaser.min.js"></script>
@@ -60,9 +64,16 @@
     </div>
 </section>
 
-<aside id="version">
-    Version : <span id="version_number"></span>
+<aside id="volume">
+    <div id="volume_picker" class="nes-container is-rounded is-dark">
+        <div id="volume_picker_level"></div>
+    </div>
+    <img src="assets/volume.png" />
 </aside>
+
+<footer id="version">
+    Version : <span id="version_number"></span>
+</footer>
 
 <aside id="debug"></aside>
 
@@ -84,6 +95,7 @@
   importJs("js/audio.js");
   importJs("js/timer.js");
   importJs("js/scores.js");
+  importJs("js/volume.js");
   importJs("js/loading/Loading.js");
   importJs("js/scene-1/Scene1.js");
   importJs("js/scene-2/player.js");
